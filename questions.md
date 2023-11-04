@@ -1,0 +1,1 @@
+- should i add the package-lock.json, the package.json and the node modules into the remote repo or should they be hidden/gitignored?
