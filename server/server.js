@@ -9,8 +9,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
 
+// statically serve everything in the build folder on the route '/build'
+app.use('/build', express.static(path.join(__dirname, '../build')));
+
 app.get('/', (req, res) => {
-  return res.sendFile(path.join(__dirname, '../client/index.html'));
+  return res.sendFile(path.join(__dirname, '../index.html'));
 })
 
 app.listen(PORT, () => { console.log(`listening on port ${PORT}`) });

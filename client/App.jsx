@@ -8,7 +8,4 @@ const App = () => {
   )
 }
 
-// const root = createRoot(document.querySelector('#app'));
-// root.render(<App />,);
-
 export default App;
