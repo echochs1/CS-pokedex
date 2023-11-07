@@ -1,13 +1,11 @@
 const express = require('express');
 const path = require('path');
-
-
 const PORT = 3000;
-
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded());
+// app.use(cors());
 
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));

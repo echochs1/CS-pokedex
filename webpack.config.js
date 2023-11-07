@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: [
@@ -28,7 +27,8 @@ module.exports = {
         }
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader',
@@ -39,7 +39,7 @@ module.exports = {
   devServer: {
     static: {
       directory: path.resolve(__dirname),
-    }
+    },
   },
   plugins: [new HtmlWebpackPlugin()],
 };
