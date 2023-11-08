@@ -29,4 +29,9 @@ li a:hover {
   background-color: rgb(247, 239, 89);
 }
 
+img {
+  width: 50%;
+  height: 50%;
+}
+
 /* want to center pokemon img and search box */

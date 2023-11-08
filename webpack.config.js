@@ -40,6 +40,9 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname),
     },
+    proxy: {
+      '/auth/*' : 'http://localhost:3000/'
+      },
   },
   plugins: [new HtmlWebpackPlugin()],
 };
