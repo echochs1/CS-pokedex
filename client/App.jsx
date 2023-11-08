@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Searchbar from './components/Searchbar.jsx';
 import Pokemon from './pages/Pokemon.jsx';
 import NotFound from './pages/NotFound.jsx';
 import Navbar from './components/Navbar.jsx';
+import About from './pages/About.jsx';
 
 const App = () => {
   // const [pokemon, setPokemon] = useState('Pachirisu');
@@ -12,12 +13,15 @@ const App = () => {
 
   return (
     <>
-      <Navbar/>
-      <Routes>
-        <Route path='/' Component={Searchbar}/>
-        <Route path='/pokemon/:pokemonName' Component={Pokemon}/>
-        <Route path='*' Component={NotFound}/>
-      </Routes>
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Searchbar />}/>
+          <Route path='/about' element={<About />}/>
+          <Route path='/pokemon/:pokemonName' element={<Pokemon />}/>
+          <Route path='*' element={<NotFound />}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
