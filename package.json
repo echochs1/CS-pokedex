@@ -20,8 +20,10 @@
   "homepage": "https://github.com/echochs1/CS-pokedex#readme",
   "dependencies": {
     "@remix-run/router": "^1.11.0",
+    "cookie-parser": "^1.4.6",
     "eslint": "^8.53.0",
     "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "jest": "^29.7.0",
     "mongoose": "^8.0.0",
     "react": "^18.2.0",

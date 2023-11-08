@@ -9,7 +9,9 @@ userController.createUser = async (req, res, next) => {
       username: req.body.username,
       password: req.body.password
     });
-    console.log('created user:', user)
+    console.log('created user, this is the id:', JSON.stringify(user['_id']));
+    const userId = JSON.stringify(user['_id']);
+    res.locals.id = userId.substring(1, userId.length - 1);
     next()
   } catch (err) {
     next({
