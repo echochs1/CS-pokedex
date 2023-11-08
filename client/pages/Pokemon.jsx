@@ -44,7 +44,7 @@ const Pokemon = () => {
   }
   else {
     return (
-      <div>
+      <div className='pokeImage'>
         <img src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
         <p>Hello I am the pokemon: {pokemonName}</p>
       </div>
