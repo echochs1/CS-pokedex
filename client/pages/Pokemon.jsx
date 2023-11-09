@@ -50,7 +50,7 @@ const Pokemon = ({ ssid }) => {
         <img src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
         {/* <img src="https://projectpokemon.org/images/normal-sprite/chimchar.gif" alt="" /> */}
         <p>Hello I am the pokemon: {pokemonName}</p>
-        {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData} ssid={ssid}/> : null}
+        {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData} ssid={ssid} pokeGif={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`}/> : null}
       </div>
     )
   }

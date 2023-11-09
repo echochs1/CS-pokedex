@@ -29,7 +29,7 @@ const Signup = ({ ssid, setSsid}) => {
           console.log('From fetch react, setting ssidState with', res);
           setSsid(res);
           console.log('setSsid complete');
-          navigate('/hidden');
+          navigate('/partyBox');
         })
         .catch(err => console.log('error in signup fetch'))
     }

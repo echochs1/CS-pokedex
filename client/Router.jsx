@@ -6,8 +6,7 @@ import NotFound from './pages/NotFound.jsx';
 import About from './pages/About.jsx';
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
-import Hidden from './pages/Hidden.jsx';
-
+import PartyBox from './pages/PartyBox.jsx';
 const Router = () => {
   const [ssid, setSsid] = useState([]);
   const element = useRoutes([
@@ -16,7 +15,7 @@ const Router = () => {
     { path: '/pokemon/:pokemonName', element: <Pokemon ssid={ssid}/>},
     { path: 'login', element: <Login ssid={ssid}/>},
     { path: 'signup', element: <Signup ssid={ssid} setSsid={setSsid}/>},
-    { path: 'hidden', element: <Hidden ssid={ssid}/>},
+    { path: 'partyBox', element: <PartyBox ssid={ssid}/>},
     { path: '*', element: <NotFound/>},
   ]);
 

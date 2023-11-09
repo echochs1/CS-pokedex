@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AddToBox = ({ pokemonData, ssid }) => {
+const AddToBox = ({ pokemonData, ssid, pokeGif }) => {
   const [click, setClick] = useState(true);
   const [level, setLevel] = useState(100);
   const [gender, setGender] = useState('Male');
@@ -25,10 +25,11 @@ const AddToBox = ({ pokemonData, ssid }) => {
       gender,
       ability,
       nature,
-      item
+      item,
+      gif: pokeGif
     }
 
-    fetch('/box', {
+    fetch('/box/addToBox', {
       method: 'POST',
       headers: {
         'Content-type': 'Application/JSON'
@@ -38,7 +39,7 @@ const AddToBox = ({ pokemonData, ssid }) => {
       .then((res) => res.json())
       .then((res) => {
         console.log('addPokemon sent this response from server', res);
-        navigate('/hidden');
+        navigate('/partyBox');
       })
       .catch(err => console.log('error in addPokemon fetch'))
   }

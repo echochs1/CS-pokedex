@@ -8,6 +8,7 @@ const pokemonSchema = new Schema({
   ability: { type: String, required: true },
   nature: { type: String },
   item: { type: String },
+  gif: {type: String}
   // moves: [String]
 })
 
