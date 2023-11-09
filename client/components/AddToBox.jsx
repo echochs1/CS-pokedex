@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const AddToBox = ({ pokemonData }) => {
+const AddToBox = ({ pokemonData, ssid }) => {
   const [click, setClick] = useState(true);
   const [level, setLevel] = useState(100);
   const [gender, setGender] = useState('Male');
@@ -19,6 +19,7 @@ const AddToBox = ({ pokemonData }) => {
 
   const submitPokemon = () => {
     const body = {
+      ssid,
       name: pokemonData.name,
       level,
       gender,
@@ -27,7 +28,7 @@ const AddToBox = ({ pokemonData }) => {
       item
     }
 
-    fetch('/addPokemon', {
+    fetch('/box', {
       method: 'POST',
       headers: {
         'Content-type': 'Application/JSON'

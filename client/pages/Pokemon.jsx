@@ -17,10 +17,10 @@ const Pokemon = ({ ssid }) => {
       setPokemonData(res);
       const id = res.id.toString();
       console.log('pokemonID:', res.id.toString())
-      if (id > 151) {
-        console.log('Pokemon must be one of the original 151');
-        throw new Error('Pokemon must be one of the original 151');
-      }
+      // if (id > 151) {
+      //   console.log('Pokemon must be one of the original 151');
+      //   throw new Error('Pokemon must be one of the original 151');
+      // }
       if (id.length === 1) {
         setPokemonId('00' + id); 
       } else if (id.length === 2) {
@@ -48,8 +48,9 @@ const Pokemon = ({ ssid }) => {
     return (
       <div className='pokeImage'>
         <img src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
+        {/* <img src="https://projectpokemon.org/images/normal-sprite/chimchar.gif" alt="" /> */}
         <p>Hello I am the pokemon: {pokemonName}</p>
-        {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData}/> : null}
+        {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData} ssid={ssid}/> : null}
       </div>
     )
   }

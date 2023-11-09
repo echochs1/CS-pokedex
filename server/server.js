@@ -8,6 +8,7 @@ const mongoURI = 'mongodb://localhost/pokeapp';
 mongoose.connect(mongoURI);
 
 const authRouter = require('./routes/auth')
+const boxRouter = require('./routes/box');
 
 const app = express();
 app.use(express.json());
@@ -18,6 +19,7 @@ app.use(cookieParser());
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
 app.use('/auth', authRouter);
+app.use('/box', boxRouter);
 
 app.get('/*', (req, res) => {
   return res.sendFile(path.join(__dirname, '../build', '../index.html'));

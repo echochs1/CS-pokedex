@@ -41,7 +41,8 @@ module.exports = {
       directory: path.resolve(__dirname),
     },
     proxy: {
-      '/auth/*' : 'http://localhost:3000/'
+      '/auth/*' : 'http://localhost:3000/',
+      '/box/*' : 'http://localhost:3000/'
       },
   },
   plugins: [new HtmlWebpackPlugin()],
