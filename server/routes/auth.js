@@ -4,9 +4,9 @@ const sessionController = require('../controllers/sessionController');
 
 const router = express.Router();
 
-router.post('/signup', userController.createUser, sessionController.createSessionDB, (req, res) => {
+router.post('/signup', userController.createUser, sessionController.sessionDB, (req, res) => {
   console.log('hit router post signup');
-  res.status(200).end();
+  res.status(200).json(res.locals.id);
 });
 
 module.exports = router;

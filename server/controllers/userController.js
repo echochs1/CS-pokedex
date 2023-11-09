@@ -9,12 +9,13 @@ userController.createUser = async (req, res, next) => {
       username: req.body.username,
       password: req.body.password
     });
-    console.log('created user, this is the id:', JSON.stringify(user['_id']));
     const userId = JSON.stringify(user['_id']);
+    console.log('created user, this is user:', JSON.stringify(user['username']));
+    console.log('created user, this is the id:', userId.substring(1, userId.length - 1));
     res.locals.id = userId.substring(1, userId.length - 1);
-    next()
+    return next()
   } catch (err) {
-    next({
+    return next({
       log: 'Error in userController.createUser ' + err,
       status: 500,
       message: { err: 'Could not create User' },

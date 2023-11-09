@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ ssid, setSsid}) => {
   //creds should be sessions in the future
   const [creds, setCreds] = useState({});
   const [userError,  setUserError] = useState(null);
   const [passwordError,  setPasswordError] = useState(null);
+  const navigate = useNavigate();
 
   function handleSignup() {
     console.log(creds);
@@ -23,7 +24,13 @@ const Signup = () => {
         },
         body: JSON.stringify(body)
       })
-        .then((res)=> console.log('signup fetch:', res))
+        .then((res)=> res.json())
+        .then((res) => {
+          console.log('From fetch react, setting ssidState with', res);
+          setSsid(res);
+          console.log('setSsid complete');
+          navigate('/hidden');
+        })
         .catch(err => console.log('error in signup fetch'))
     }
   }

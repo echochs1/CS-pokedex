@@ -1,12 +1,12 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-const Hidden = ({ user }) => {
-  // if (!user) {
-  //   return (
-  //     <Navigate to='/login' replace/>
-  //   );
-  // }
+const Hidden = ({ ssid }) => {
+  if (!ssid) {
+    return (
+      <Navigate to='/login' replace/>
+    );
+  }
 
   return (
     <div>

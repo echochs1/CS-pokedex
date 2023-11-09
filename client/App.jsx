@@ -8,7 +8,7 @@ const App = () => {
   // probably wont set state here but in searchbar.
   // The searchbar will then send the pokemon name state as a param in pokemon
 
-  // const [user, setUser] = useState();
+
   // const navigate = useNavigate();
 
   // function logOut() {

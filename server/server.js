@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const PORT = 3000;
 
@@ -11,6 +12,7 @@ const authRouter = require('./routes/auth')
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(cookieParser());
 
 // statically serve everything in the build folder on the route '/build'
 app.use('/build', express.static(path.join(__dirname, '../build')));
