@@ -47,7 +47,7 @@ const Signup = ({ ssid, setSsid}) => {
 
   return (
     <div style={{ padding: 10 }}>
-      <br/>
+      <h2>Sign up</h2>
         <span>Username:</span>
       <br/>
         <input type="text" onChange={(e) => handleUserChange(e.target.value)}/>

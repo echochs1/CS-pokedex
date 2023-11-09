@@ -9,11 +9,11 @@ import Signup from './pages/Signup.jsx';
 import Hidden from './pages/Hidden.jsx';
 
 const Router = () => {
-  const [ssid, setSsid] = useState({});
+  const [ssid, setSsid] = useState([]);
   const element = useRoutes([
     { path: '/', element: <Searchbar/>},
     { path: '/about', element: <About/>},
-    { path: '/pokemon/:pokemonName', element: <Pokemon/>},
+    { path: '/pokemon/:pokemonName', element: <Pokemon ssid={ssid}/>},
     { path: 'login', element: <Login ssid={ssid}/>},
     { path: 'signup', element: <Signup ssid={ssid} setSsid={setSsid}/>},
     { path: 'hidden', element: <Hidden ssid={ssid}/>},

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import AddToBox from '../components/AddToBox.jsx';
 
-const Pokemon = () => {
-  // const pokemonName = 'Pachirisu'
+const Pokemon = ({ ssid }) => {
   const { pokemonName } = useParams();
-
-  const [pokemonId, setPokemonId] = useState({});
+  console.log('ssid:', ssid);
+  const [pokemonId, setPokemonId] = useState();
+  const [pokemonData, setPokemonData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -13,6 +14,7 @@ const Pokemon = () => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
     .then(res => res.json())
     .then(res => {
+      setPokemonData(res);
       const id = res.id.toString();
       console.log('pokemonID:', res.id.toString())
       if (id > 151) {
@@ -33,7 +35,7 @@ const Pokemon = () => {
       setIsLoading(false);
     })
     .catch((err) => 'error in fetch');
-  }, [pokemonId])
+  }, [])
 
   if (isLoading) {
     return (
@@ -47,6 +49,7 @@ const Pokemon = () => {
       <div className='pokeImage'>
         <img src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
         <p>Hello I am the pokemon: {pokemonName}</p>
+        {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData}/> : null}
       </div>
     )
   }

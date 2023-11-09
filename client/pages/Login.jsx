@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ onLogin, setCreds }) => {
+const Login = ({ ssid }) => {
   //creds should be sessions in the future
   // const [creds, setCreds] = useState({});
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = ({ onLogin, setCreds }) => {
 
   return (
     <div style={{ padding: 10 }}>
-      <br/>
+      <h2>Log in</h2>
       <span>Username:</span><br/>
       <input
         type="text"
