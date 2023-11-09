@@ -4,23 +4,12 @@ import Navbar from './components/Navbar.jsx';
 import Router from './Router.jsx';
 
 const App = () => {
-  // const [pokemon, setPokemon] = useState('Pachirisu');
-  // probably wont set state here but in searchbar.
-  // The searchbar will then send the pokemon name state as a param in pokemon
-
-
-  // const navigate = useNavigate();
-
-  // function logOut() {
-  //   setUser(null);
-  //   navigate("/");
-  // }
-
+  const [ssid, setSsid] = useState([]);
   return (
     <>
       <BrowserRouter>
-        <Navbar/>
-        <Router/>
+        <Navbar ssid={ssid}/>
+        <Router ssid={ssid} setSsid={setSsid}/>
       </BrowserRouter>
     </>
   )

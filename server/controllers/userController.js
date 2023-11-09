@@ -23,6 +23,32 @@ userController.createUser = async (req, res, next) => {
   }
 }
 
+userController.login = async (req, res, next) => {
+  try {
+    console.log('In login');
+    const user = await User.findOne(
+      {
+        username: req.body.username,
+        password: req.body.password,
+      },
+      '_id'
+    );
+
+    if (!user) {
+      throw new Error;
+    }
+
+    res.locals.id = user['_id'].toString();
+    return next();
+  } catch (err) {
+    return next({
+      log: 'Error in userController.login ' + err,
+      status: 500,
+      message: { err: 'Invalid login' },
+    });
+  }
+}
+
 userController.addToBox = async (req, res, next) => {
   try {
     console.log('In userController.addToBox');

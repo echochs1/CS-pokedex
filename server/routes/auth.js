@@ -9,4 +9,9 @@ router.post('/signup', userController.createUser, sessionController.sessionDB, (
   res.status(200).json(res.locals.id);
 });
 
+router.post('/login', userController.login, sessionController.sessionDB, (req, res) => {
+  console.log('hit router post login');
+  res.status(200).json(res.locals.id);
+})
+
 module.exports = router;

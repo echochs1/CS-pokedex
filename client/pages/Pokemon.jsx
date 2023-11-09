@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import AddToBox from '../components/AddToBox.jsx';
+import PokemonCard from '../components/PokemonCard.jsx';
 
 const Pokemon = ({ ssid }) => {
   const { pokemonName } = useParams();
@@ -46,10 +47,11 @@ const Pokemon = ({ ssid }) => {
   }
   else {
     return (
-      <div className='pokeImage'>
+      <div>
+        <div className='pokeImage'>
         <img src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
-        {/* <img src="https://projectpokemon.org/images/normal-sprite/chimchar.gif" alt="" /> */}
-        <p>Hello I am the pokemon: {pokemonName}</p>
+        </div>
+        <p>Pokemon: {pokemonName}</p>
         {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData} ssid={ssid} pokeGif={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`}/> : null}
       </div>
     )

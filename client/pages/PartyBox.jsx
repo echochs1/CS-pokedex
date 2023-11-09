@@ -57,8 +57,9 @@ const PartyBox = ({ ssid }) => {
     return (
       <div>
         <h1>Welcome to Your Box!</h1>
-        <p>your box </p>
-        {pokemonCards}
+        <div className="cardContainer">
+          {pokemonCards}
+        </div>
       </div>
     );
   }

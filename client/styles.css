@@ -30,8 +30,8 @@ li a:hover {
 }
 
 img {
-  width: 50%;
-  height: 50%;
+  /* size: 5vw; */
+  width: 200px;
 }
 
 /* want to center pokemon img and search box */
