@@ -12,6 +12,11 @@ router.post('/signup', userController.createUser, sessionController.sessionDB, (
 router.post('/login', userController.login, sessionController.sessionDB, (req, res) => {
   console.log('hit router post login');
   res.status(200).json(res.locals.id);
-})
+});
+
+router.post('/logout', sessionController.deleteSession, (req, res) => {
+  console.log('hit router post logout');
+  res.status(200).json('success');
+});
 
 module.exports = router;

@@ -47,15 +47,45 @@ const Pokemon = ({ ssid }) => {
   }
   else {
     return (
-      <div>
+      <div className='searchDiv'>
         <div className='pokeImage'>
         <img src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
         </div>
-        <p>Pokemon: {pokemonName}</p>
+        {/* <p>Pokemon: {pokemonName}</p> */}
+        <ul className='cardList'>
+          <li className='cardLi'>Pokemon: {pokemonName}</li>
+          <li className='cardLi'>Base HP: {pokemonData.stats[0].base_stat}</li>
+          <li className='cardLi'>Base Attack: {pokemonData.stats[1].base_stat}</li>
+          <li className='cardLi'>Base Defense: {pokemonData.stats[2].base_stat}</li>
+          <li className='cardLi'>Base Special Attack: {pokemonData.stats[3].base_stat}</li>
+          <li className='cardLi'>Base Special Defense: {pokemonData.stats[4].base_stat}</li>
+          <li className='cardLi'>Base Speed: {pokemonData.stats[5].base_stat}</li> 
+        </ul>
         {!Array.isArray(ssid) ? <AddToBox pokemonData={pokemonData} ssid={ssid} pokeGif={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`}/> : null}
       </div>
     )
   }
+  // else {
+  //   return (
+  //     <div className='searchDiv'> 
+  //       <article className='charCard'>
+  //   <div className='imgContainer'>
+  //     <img className='charImg' src={`https://projectpokemon.org/images/sprites-models/bw-animated/${(pokemonId)}.gif`} alt="" />
+  //   </div>
+  //   <ul className='cardList'>
+  //     <li className='cardLi'>Pokemon: {pokemonName}</li>
+  //     {/* <li className='cardLi'>Base HP: {pokemonData.}</li>
+  //     <li className='cardLi'>Base Attack: {pokemonData.gender}</li>
+  //     <li className='cardLi'>Base Defense: {pokemonData.ability}</li>
+  //     <li className='cardLi'>Base Special Attack: {pokemonData.nature}</li>
+  //     <li className='cardLi'>Base Special Defense: {pokemonData.item}</li>
+  //     <li className='cardLi'>Base Speed: {pokemonData.item}</li> */}
+  //   </ul>
+  // </article>
+  //     </div>
+
+  //   )
+  // }
 }
 
 export default Pokemon;

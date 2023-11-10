@@ -33,8 +33,10 @@ const PartyBox = ({ ssid }) => {
   }, [])
 
   const pokemonCards = [];
-  for (let i = 0; i < box.length; i++) {
-    pokemonCards.push(<PokemonCard pokemonData={box[i]}/>);
+  if (!isLoading) {
+    for (let i = 0; i < box.length; i++) {
+      pokemonCards.push(<PokemonCard pokemonData={box[i]}/>);
+    }
   }
 
   console.log('this is boxboxbox', box);

@@ -13,8 +13,8 @@ const Searchbar = () => {
   }
 
   return (
-  <div>
-    <h2>This will be the Home Page with a searchbar to search pokemon</h2>
+  <div className='searchDiv'>
+    <h2 className='searchTitle'>Search Pokemon</h2>
     <input type="text" name="search" id="search" onChange={autoFill}/>
     <Link to={`/pokemon/${pokemonName}`}>
       <button

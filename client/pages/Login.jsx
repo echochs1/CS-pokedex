@@ -45,8 +45,24 @@ const Login = ({ ssid, setSsid }) => {
   }
 
   function handleLogout() {
-    setSsid([]);
-    navigate('/');
+    console.log('ssid in handleLogout', ssid);
+    if (!Array.isArray(ssid)) {
+      fetch('/auth/logout', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'Application/JSON'
+        },
+        body: JSON.stringify({ssid})
+      })
+        .then((res)=> res.json())
+        .then((res) => {
+          console.log('From fetch logout, setting ssidState with', res);
+          setSsid([]);
+          console.log('setSsid complete empty');
+          navigate('/');
+        })
+        .catch(err => console.log('error in signup fetch'))
+    }
   }
 
   return (

@@ -39,4 +39,22 @@ sessionController.sessionDB = async (req, res, next) => {
   }
 };
 
+sessionController.deleteSession = async (req, res, next) => {
+  // write code here
+  try {
+    console.log('Here is the req.body from deleteSession:', req.body);
+    await Ssid.findOneAndDelete({
+      sessionId: req.body.ssid
+    });
+    // res.locals.session = query.sessionId;
+    return next();
+  } catch (err) {
+    return next({
+      log: 'Error in userController.deleteSession ' + err,
+      status: 500,
+      message: { err: 'Could not delete Session' },
+    })
+  }
+};
+
 module.exports = sessionController;
