@@ -20,6 +20,7 @@
   "homepage": "https://github.com/echochs1/CS-pokedex#readme",
   "dependencies": {
     "@remix-run/router": "^1.11.0",
+    "byte-base64": "^1.1.0",
     "cookie-parser": "^1.4.6",
     "eslint": "^8.53.0",
     "express": "^4.18.2",
